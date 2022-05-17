@@ -1,0 +1,2 @@
+S -> aSbc | D
+D -> dD | d

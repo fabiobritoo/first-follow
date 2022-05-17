@@ -1,0 +1,2 @@
+S -> aA | c
+A -> acA | b | S
