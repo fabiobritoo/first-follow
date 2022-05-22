@@ -54,10 +54,6 @@ print(codigo_entrada)
 production = dict()
 
 # %%
-production
-
-# %%
-produz_vazio = []
 
 for line in codigo_entrada.splitlines():
     left = line.split('->')[0].strip() 
@@ -65,13 +61,11 @@ for line in codigo_entrada.splitlines():
 
     print(f"FIRST({left}) = ", end="")
     right
-    production[left] = right
+    production[left] = []
 
     for idx, right_part  in enumerate(right.split("|")): 
-
-        if(right_part.strip() == "λ"): ## Guardar quando o elemento produz vazio
-            produz_vazio.append(left) 
-
+ 
+        production[left].append(right_part.strip())
         if idx > 0:
             print(f" + FIRST({right_part.strip()})", end="")
         else:
@@ -79,36 +73,87 @@ for line in codigo_entrada.splitlines():
 
     print("")
 
-produz_vazio = list(set(produz_vazio))
+
 
 # %%
-def first_set(value):        
-    print(f"FIRST({value})")
-    if value == prod:
-        return ""
-    if value == "λ":
-        return "λ"
-    if value in variaveis_nao_terminais:
-        first_set(production[value])
-    elif value[0] in variaveis_terminais:
-        return value[0]
-    elif value[0] in variaveis_nao_terminais:        
-        if "λ" not in first_set(value[0]):
-            return first_set(value[0])
-        else:
-            return first_set(value[0]).replace("λ","") + first_set(value[1:])
+production
+
+# %%
+## Criar dicionário de first
+first_dict = production.copy()
+for elem in first_dict:
+    first_dict[elem] = []
+
+# %%
+production
+
+# %%
+first_dict
+
+def merge_lists(elem1, elem2):
+    if type(elem1 != list):
+        elem1 = list(elem1)
+    if type(elem2 != list):
+        elem2 = list(elem2)
+    return list(set(elem1 + elem2))
+
+# %%
+def first_set(key):
+    ### Checar se já existe no dicionário 
+
+    resultado = []
+
+    if len(key) == 1:
+        if (len(first_dict[key]) != 0):
+            return first_dict[key]
+            
+        value = production[key]
+    else:
+        value = [key]  
+
+    for elem in value:
+
+        if (len(elem) == 1 and elem == key):
+            saida = []
+        if elem == 'λ':
+            saida = 'λ'
+        if elem[0] in variaveis_terminais:
+            saida = elem[0]
+        if elem[0] in variaveis_nao_terminais:
+            if (len(first_dict[elem[0]]) != 0 ):
+                check = first_dict[elem[0]]
+            else:
+                check = first_set(elem[0])
+            ### CHecar se o first já foi calculado FIRST T
+            if 'λ' not in check:
+                saida = first_dict[elem[0]]
+            else:       
+                if(len(elem) > 1):
+                    lista_sem_vazio =  [value for value in first_dict[elem[0]] if value != 'λ']
+                    
+                    if (elem[1:] == variavel_da_vez):
+                        saida = lista_sem_vazio
+                    else:
+                        # saida = lista_sem_vazio.append(first_set(elem[1:]))
+                        saida = merge_lists(lista_sem_vazio, first_set(elem[1:]))
+                else:
+                    saida = first_dict[elem[0]]
         
-    return 1
+        # resultado.append(saida)
+        resultado = merge_lists(resultado,saida)
+    first_dict[key] = resultado
+    return resultado
 
+print("INICIO")
+variavel_da_vez = 'Z'
+first_set('Z')
+variavel_da_vez = 'Y'
+first_set('Y')
+variavel_da_vez = 'T'
+first_set('T')
+variavel_da_vez = 'X'
+first_set('X')
 # %%
-dict_first = dict()
-for prod in production:
-    print(f"FIRST({prod}) = ", end="")
-    right_list = production[prod].split("|")
-    right_list = [elem.strip() for elem in right_list]
 
-    dict_first[prod] = []
 
-    for value in right_list:    
-        dict_first[prod].append(first_set(value))
-    
+
