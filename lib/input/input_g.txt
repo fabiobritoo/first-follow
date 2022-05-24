@@ -1,0 +1,6 @@
+E -> TX
+X -> +TX | λ
+T -> FR
+R -> *FR | λ
+F -> P | -P
+P -> [E] | x | y

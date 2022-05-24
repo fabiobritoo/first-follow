@@ -1,0 +1,7 @@
+S -> [L] | a
+L -> EA
+A -> ;EA | λ
+E -> XB
+B -> :FB | B
+F -> b | λ
+X -> F | c

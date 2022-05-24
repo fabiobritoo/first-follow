@@ -8,8 +8,8 @@ import numpy as np
 
 # %%
 file_path = "lib/input/"
-file_name = "test_video.txt"
-# file_name = "example_1.txt"
+# file_name = "input_1.txt"
+file_name = "example_1.txt"
 try:
     codigo_entrada = open(file_path + file_name, "r", encoding="utf8").read()
 except:
@@ -177,34 +177,50 @@ for key, value in first_dict.items():
 # %%
 follow_dict
 
+def checar_dictionario(key, dict):
+    check = key in dict
+    if check:
+        if len(dict[key])>0:
+            return True
+    return False
+
 # %%
 def follow_set(key):
   resultado = []
   ### Achar elemento que contem key
   for chave, valor in production.items():
     for elem in valor:
+      saida = []
       if key == simbolo_inicial:
           saida = "$"
       if key in elem:
-        ### Achou elemento que possui a key
-        print(chave + ':' + elem)
-        saida = []
-
+        ### Achou elemento que possui a key     
         ### Se elemento estiver na posição final    
         indice = elem.index(key)
 
         palavra_restante = elem[indice + 1:]
 
         if palavra_restante == '':
-          if len(follow_dict[chave]) != 0:
-              saida = follow_dict[chave]
+            
+          if checar_dictionario(chave,follow_dict):
+                saida = follow_dict[chave]
           else:
-            saida = follow_set(chave)
+            if key == chave:
+                saida = [] 
+            else:
+                saida = follow_set(chave)
         else:
-          saida = first_dict[palavra_restante]
+            if checar_dictionario(palavra_restante,first_dict):
+                saida = first_dict[palavra_restante]
+            else:
+                saida = first_set(palavra_restante)
 
-      resultado = merge_lists(resultado,saida)
-      if 'λ' in resultado: resultado.remove('λ')
+
+      resultado = merge_lists(resultado,saida)     
+      if 'λ' in resultado: 
+          resultado.remove('λ')
+          resultado = merge_lists(resultado,follow_set(chave))
+           
 
   follow_dict[key] = resultado
   
@@ -212,8 +228,8 @@ def follow_set(key):
 
 
 
-# %%
 
+print("Inicio do Follow")
 variavel_da_vez = 'S'
 follow_set(variavel_da_vez)
 
@@ -226,7 +242,19 @@ follow_set(variavel_da_vez)
 variavel_da_vez = 'C'
 follow_set(variavel_da_vez)
 
+for variavel in production:
+    variavel_da_vez = variavel
+    follow_set(variavel)
+
 # %%
+print(100*'#')
+
+print('First')
+for key, value in first_dict.items():
+    print(key, ' : ', value)
+
+print(100*'#')
+print('Follow')
 for key, value in follow_dict.items():
     print(key, ' : ', value)
 
