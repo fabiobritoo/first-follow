@@ -1,4 +1,4 @@
 S -> AT | TB
 T -> aTb | λ
-A -> aA | λ
+A -> aA | a
 B -> bB | b

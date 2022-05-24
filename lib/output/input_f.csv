@@ -1,2 +1,3 @@
 Variavel,Producao,First,Follow
-E,{a},{a},{$}
+E,"{[E]X,aX}","{a,[}",}
+X,"{+EX,*EX,λ}","{+,λ,*}",}

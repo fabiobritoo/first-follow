@@ -1,3 +1,3 @@
 Variavel,Producao,First,Follow
-S,"{aSbc,D}","{d,a}","{b,$}"
-D,"{dD,d}",{d},"{b,$}"
+S,"{aSbc,D}","{a,d}","{$,b}"
+D,"{dD,d}",{d},"{$,b}"

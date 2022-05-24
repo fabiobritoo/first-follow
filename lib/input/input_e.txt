@@ -2,6 +2,6 @@ S -> [L] | a
 L -> EA
 A -> ;EA | λ
 E -> XB
-B -> :FB | B
+B -> :FB | λ
 F -> b | λ
 X -> F | c
