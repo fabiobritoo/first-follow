@@ -1,0 +1,7 @@
+Aparentemente eu devo considerar os casos onde o Follow ainda está incompleto
+
+Isso iria mudar bastante o código, já que eu espero para colocar no dicionário, quando a função está completa
+Só assim eu consigo saber se terminou, para chamar o dicionário daquela terminal se já estiver completo no dicionario
+
+Poder se que isso só aconteça com a variavel principal.
+Talvez se começar a função, colocando o Cifrão nela, funcione
