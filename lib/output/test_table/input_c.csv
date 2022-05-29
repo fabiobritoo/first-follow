@@ -1,5 +1,10 @@
 Pilha,Entrada,Producao
 $,$,S
-$S,i+n+i$,S->i = E
-$E=i,i+n+i$,
-$E=,+n+i$,
+$S,i=i+n$,S->i = E
+$E=i,i=i+n$,
+$E=,=i+n$,
+$E,i+n$,E->iX
+$Xi,i+n$,
+$X,+n$,X->+iX
+$Xi+,+n$,
+$Xi,n$,

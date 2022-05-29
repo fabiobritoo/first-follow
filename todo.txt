@@ -5,3 +5,10 @@ Só assim eu consigo saber se terminou, para chamar o dicionário daquela termin
 
 Poder se que isso só aconteça com a variavel principal.
 Talvez se começar a função, colocando o Cifrão nela, funcione
+
+
+Prioridades:
+1 - Exemplo 3 e letra e: Ele não está continuando, quando só tem os terminais.
+
+2 - Follow da letra f não aparece
+
