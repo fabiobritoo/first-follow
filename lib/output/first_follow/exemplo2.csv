@@ -1,5 +1,5 @@
 Variavel,Producao,First,Follow
-S,"{ACB,CbB,Ba}","{a,g,b,h,λ,d}",{$}
-A,"{da,BC}","{h,d,λ,g}","{h,$,g}"
-B,"{g,λ}","{λ,g}","{a,h,$,g}"
-C,"{h,λ}","{h,λ}","{b,h,$,g}"
+S,"{ACB,CbB,Ba}","{b,h,g,d,λ,a}",{$}
+A,"{da,BC}","{d,g,λ,h}","{$,g,h}"
+B,"{g,λ}","{g,λ}","{$,g,a,h}"
+C,"{h,λ}","{h,λ}","{$,g,h,b}"
