@@ -23,12 +23,12 @@ def print_dict(dictionary):
 
 
 # %%
-file_path = "lib/input/"
+file_path = "lib/input/productions/"
 
 try:
     file_name = file_name_externo
 except:
-    file_name = "input_b.txt"
+    file_name = "input_f.txt"
 try:
     codigo_entrada = open(file_path + file_name, "r", encoding="utf8").read()
 except:
@@ -280,6 +280,7 @@ def follow_set(key):
       resultado = merge_lists(resultado,saida)     
       if 'λ' in resultado: 
           resultado.remove('λ')
+          
           resultado = merge_lists(resultado,follow_set(chave))
            
 
@@ -298,7 +299,7 @@ for variavel in production:
         print("Variável: ", variavel_da_vez)
 
 # %%
-
+print_dict(first_dict)
 
 # %%
 ### Remover chaves de tamanho maior que um
@@ -336,7 +337,7 @@ for key, value in follow_dict.items():
     df.loc[df['Variavel'] == key, 'Follow'] = listToString(value)
 
 # %%
-nome_arquivo_saida = f'lib/output/{file_name[:-3]}csv'
+nome_arquivo_saida = f'lib/output/first_follow/{file_name[:-3]}csv'
 try:
     df.to_csv(nome_arquivo_saida, index = False)
 except:
@@ -361,6 +362,7 @@ df_1.index = df_1['M(V,T)']
 df_1
 
 # %%
+print('Produção:')
 print_dict(production)
 
 # %%
@@ -417,9 +419,30 @@ df_1 = df_1.fillna('-')
 df_1
 
 # %%
+nome_arquivo_saida = f'lib/output/predictive_table/{file_name[:-3]}csv'
+try:
+    df_1.to_csv(nome_arquivo_saida, index = False)
+    print('Tabela Preditiva Gerada')
+except:
+    print("Não pode salvar aquivo de saída")
+
+# %%
+alfabeto = merge_lists(df_1.index,df_1.columns)
+alfabeto = merge_lists(alfabeto,'$') 
+
+# %%
 #### Tabela de Verificação
 palavra = 'x + x * x'
 palavra = palavra.replace(" ","")
+
+file_path_test = "lib/input/test_words/"
+
+try:
+    palavra = open(file_path_test + file_name, "r", encoding="utf8").read()
+    palavra = palavra.replace(" ","")
+except:
+    palavra = """aab"""
+
 
 # %%
 def juntar_lista(lista):
@@ -447,7 +470,7 @@ nova_entrada = palavra
 
 for i in range(1,50):
 
-    nova_pilha = producao.split('->')[-1] 
+    nova_pilha = producao.split('->')[-1].replace(" ","") 
 
     if nova_pilha == 'λ':
         nova_pilha = ''
@@ -455,13 +478,12 @@ for i in range(1,50):
     [lista_pilha.insert(len(lista_pilha), elem) for elem in nova_pilha[::-1]]    
 
     if len(lista_pilha) == 0:
-        print('Terminou')
         break
 
     elemento_analisado = lista_pilha[-1]
     elemento_entrada = lista_entrada[0]
 
-    if elemento_entrada not in merge_lists(df_1.index,df_1.columns):
+    if elemento_entrada not in alfabeto:
         print('Elemento não corresponde ao Alfabeto')
         break
 
@@ -481,6 +503,7 @@ for i in range(1,50):
             print("Não foi possível realizar a palavra, pilha não possui não-terminais")
             break
         if (len(producao) == 1):
+            df_2.loc[i] = [juntar_lista(lista_pilha),juntar_lista(lista_entrada),producao]
             print("Não foi possível realizar a palavra, não há producão que gere entrada")
             break
 
@@ -489,13 +512,18 @@ for i in range(1,50):
     if pop_entrada: lista_entrada.pop(0)
     eliminado = lista_pilha.pop()
 
+
+
+
 df_2
 
 # %%
-
-
-# %%
-
+nome_arquivo_saida = f'lib/output/test_table/{file_name[:-3]}csv'
+try:
+    df_2.to_csv(nome_arquivo_saida, index = False)
+    print('Tabela de Testes Gerada')
+except:
+    print("Não pode salvar aquivo de saída")
 
 # %%
 

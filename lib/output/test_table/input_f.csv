@@ -1,0 +1,15 @@
+Pilha,Entrada,Producao
+$,$,E
+$E,[a]*a$,E->[E]X
+$X]E[,[a]*a$,
+$X]E,a]*a$,E->aX
+$X]Xa,a]*a$,
+$X]X,]*a$,X->λ
+$X],]*a$,
+$X,*a$,X->*EX
+$XE*,*a$,
+$XE,a$,E->aX
+$XXa,a$,
+$XX,$,X->λ
+$X,$,X->λ
+$,$,

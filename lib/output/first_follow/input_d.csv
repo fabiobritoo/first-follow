@@ -1,5 +1,5 @@
 Variavel,Producao,First,Follow
 Z,{dY},{d},{$}
 Y,"{XTY,λ}","{c,λ}",{$}
-T,"{c,λ}","{c,λ}","{$,c}"
+T,"{c,λ}","{c,λ}","{c,$}"
 X,"{T,λ}","{c,λ}",{c}

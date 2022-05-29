@@ -8,7 +8,7 @@ Talvez se começar a função, colocando o Cifrão nela, funcione
 
 
 Prioridades:
-1 - Exemplo 3 e letra e: Ele não está continuando, quando só tem os terminais.
+1 - Exemplo 3 e letra e: Ele não está continuando, quando só tem os terminais. - Resolvido
 
 2 - Follow da letra f não aparece
 
