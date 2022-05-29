@@ -1,4 +1,4 @@
 Variavel,Producao,First,Follow
-E,"{iX,n}","{n,i}",{$}
 S,{i = E},{i},{$}
+E,"{iX,n}","{n,i}",{$}
 X,"{+nX,+iX,λ}","{+,λ}",{$}

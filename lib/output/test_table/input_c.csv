@@ -1,0 +1,5 @@
+Pilha,Entrada,Producao
+$,$,S
+$S,i+n+i$,S->i = E
+$E=i,i+n+i$,
+$E=,+n+i$,

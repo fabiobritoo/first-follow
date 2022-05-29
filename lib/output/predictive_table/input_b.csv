@@ -1,0 +1,3 @@
+"M(V,T)",a,c,b
+S,S->aA,S->c,-
+A,A->S,A->S,A->b

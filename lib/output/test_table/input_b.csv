@@ -1,0 +1,10 @@
+Pilha,Entrada,Producao
+$,$,S
+$S,aac$,S->aA
+$Aa,aac$,
+$A,ac$,A->S
+$S,ac$,S->aA
+$Aa,ac$,
+$A,c$,A->S
+$S,c$,S->c
+$c,c$,

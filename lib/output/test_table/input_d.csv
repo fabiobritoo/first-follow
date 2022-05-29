@@ -1,0 +1,12 @@
+Pilha,Entrada,Producao
+$,$,Z
+$Z,dcc$,Z->dY
+$Yd,dcc$,
+$Y,cc$,Y->XTY
+$YTX,cc$,X->T
+$YTT,cc$,T->c
+$YTc,cc$,
+$YT,c$,T->c
+$Yc,c$,
+$Y,$,Y->λ
+$,$,

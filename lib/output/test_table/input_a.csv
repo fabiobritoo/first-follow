@@ -1,0 +1,9 @@
+Pilha,Entrada,Producao
+$,$,S
+$S,adbc$,S->aSbc
+$cbSa,adbc$,
+$cbS,dbc$,S->D
+$cbD,dbc$,D->d
+$cbd,dbc$,
+$cb,bc$,
+$c,c$,

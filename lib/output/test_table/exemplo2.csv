@@ -1,0 +1,11 @@
+Pilha,Entrada,Producao
+$,$,S
+$S,dahg$,S->ACB
+$BCA,dahg$,A->da
+$BCad,dahg$,
+$BCa,ahg$,
+$BC,hg$,C->h
+$Bh,hg$,
+$B,g$,B->g
+$g,g$,
+$,$,

@@ -1,0 +1,5 @@
+"M(V,T)",b,a,d,g,h,$
+S,S->CbB,S->Ba,S->ACB,S->ACB,S->ACB,S->ACB
+A,-,-,A->da,A->BC,A->BC,A->BC
+B,-,B->λ,-,B->g,B->λ,B->λ
+C,C->λ,-,-,C->λ,C->h,C->λ

@@ -1,0 +1,15 @@
+Pilha,Entrada,Producao
+$,$,S
+$S,[c:b]$,S->[L]
+$]L[,[c:b]$,
+$]L,c:b]$,L->EA
+$]AE,c:b]$,E->XB
+$]ABX,c:b]$,X->c
+$]ABc,c:b]$,
+$]AB,:b]$,B->:FB
+$]ABF:,:b]$,
+$]ABF,b]$,F->b
+$]ABb,b]$,
+$]AB,]$,B->λ
+$]A,]$,A->λ
+$],]$,

@@ -1,0 +1,16 @@
+Pilha,Entrada,Producao
+$,$,S
+$S,aaabbbb$,S->TB
+$BT,aaabbbb$,T->aTb
+$BbTa,aaabbbb$,
+$BbT,aabbbb$,T->aTb
+$BbbTa,aabbbb$,
+$BbbT,abbbb$,T->aTb
+$BbbbTa,abbbb$,
+$BbbbT,bbbb$,T->λ
+$Bbbb,bbbb$,
+$Bbb,bbb$,
+$Bb,bb$,
+$B,b$,B->b
+$b,b$,
+$,$,
