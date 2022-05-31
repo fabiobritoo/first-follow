@@ -1,0 +1,1 @@
+Erro em input_c, na tabela de testes, quando a entrada é igual a "a"

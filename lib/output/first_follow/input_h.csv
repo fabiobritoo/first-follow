@@ -1,5 +1,5 @@
 Variavel,Producao,First,Follow
 S,"{AT,TB}","{a,b}",{$}
-T,"{aTb,λ}","{a,λ}","{b,$}"
+T,"{aTb,λ}","{a,λ}","{$,b}"
 A,"{aA,a}",{a},"{a,$}"
 B,"{bB,b}",{b},{$}

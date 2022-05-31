@@ -1,7 +1,7 @@
 Variavel,Producao,First,Follow
 S,{aBDh},{a},{$}
-B,{cC},{c},"{f,h,g}"
-C,"{bC,λ}","{b,λ}","{f,h,g}"
-D,{EF},"{f,λ,g}",{h}
-E,"{g,λ}","{λ,g}","{f,h}"
+B,{cC},{c},"{h,f,g}"
+C,"{bC,λ}","{λ,b}","{h,f,g}"
+D,{EF},"{f,g,λ}",{h}
+E,"{g,λ}","{λ,g}","{h,f}"
 F,"{f,λ}","{f,λ}",{h}
